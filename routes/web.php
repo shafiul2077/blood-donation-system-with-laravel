@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\acceptorsControoler;
+use App\Http\Controllers\acceptorsController;
+use App\Http\Controllers\donorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('acceptors', [acceptorsControoler :: class, 'index']);
+Route::get('acceptors', [acceptorsController :: class, 'index']);
+Route::post('acceptors-sent', [acceptorsController :: class, 'addAcceptors']);
+Route::get('donors', [donorController :: class, 'index']);
+Route::post('donors-sent', [donorController :: class, 'addDonors']);

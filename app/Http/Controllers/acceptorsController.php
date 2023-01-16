@@ -16,14 +16,16 @@ class acceptorsControoler extends Controller
     public function addAcceptors(Request $request){
 
         $acceptors= new acceptor();
-        $acceptors->name=$acceptors->name;
-        $acceptors->blood_group=$acceptors->blood_group;
-        $acceptors->age=$acceptors->age;
-        $acceptors->address=$acceptors->address;
-        $acceptors->contact_number=$acceptors->contact_number;
+
+        $acceptors->name=$request->name;
+        $acceptors->blood_group=$request->blood_group;
+        $acceptors->age=$request->age;
+        $acceptors->address=$request->address;
+        $acceptors->contact_number=$request->contact_number;
         $acceptors-> save();
         Session:: flash('msg','Sent Successfully!');
-        return redirect('contact');
+        return redirect('acceptors');
     }
+
 
 }
