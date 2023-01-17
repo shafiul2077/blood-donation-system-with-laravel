@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\donor;
+use App\Models\acceptor;
 use  Session;
 
 class donorController extends Controller
@@ -14,10 +15,19 @@ class donorController extends Controller
         return view('donor');
     }
 
+    public function donorDisplay()
+    {
+
+        $donorDisplay=Donor::get();
+
+
+        return view('admin.donor-list',compact('donorDisplay'));
+    }
+
 
     public function addDonors(Request $request){
 
-        $donors= new donor();
+        $donors= new Donor();
 
         $donors->name=$request->name;
         $donors->blood_group=$request->blood_group;

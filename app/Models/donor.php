@@ -9,8 +9,8 @@ class donor extends Model
 {
     use HasFactory;
 
-    public function donate()
+    public function acceptor()
     {
-        return $this->hasOne(acceptor::class);
+        return $this->belongsTo(Acceptor::class);
     }
 }

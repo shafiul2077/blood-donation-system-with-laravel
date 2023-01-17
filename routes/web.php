@@ -21,5 +21,11 @@ Route::get('/', function () {
 
 Route::get('acceptors', [acceptorsController :: class, 'index']);
 Route::post('acceptors-sent', [acceptorsController :: class, 'addAcceptors']);
+
+
+
 Route::get('donors', [donorController :: class, 'index']);
 Route::post('donors-sent', [donorController :: class, 'addDonors']);
+
+
+Route::get('donors-list', [donorController :: class, 'donorDisplay']);

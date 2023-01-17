@@ -15,7 +15,7 @@ class acceptorsControoler extends Controller
 
     public function addAcceptors(Request $request){
 
-        $acceptors= new acceptor();
+        $acceptors= new Acceptor();
 
         $acceptors->name=$request->name;
         $acceptors->blood_group=$request->blood_group;
